@@ -43,6 +43,9 @@
     ]
   },
   "engines": {
-  "node": "16.x"
+    "node": "16.x"
+  },
+  "resolutions": {
+    "caniuse-lite": "1.0.30001632"
   }
 }
