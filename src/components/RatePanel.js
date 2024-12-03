@@ -28,7 +28,7 @@ function RatePanel({
   API,
 }) {
   const isLoading = !!rate
-  const roundedRate = rate && (parseFloat(rate).toFixed(precision) * fromValue)
+  const roundedRate = rate && (parseFloat(rate) * fromValue).toFixed(precision)
   const [graphMode, setGraphMode] = useState(false)
 
   let message = isLoading
