@@ -17,6 +17,7 @@ const theme = {
 function RatePanel({
   from,
   to,
+  fromValue = 1,
   rate,
   precision = 2,
   error,
@@ -27,11 +28,11 @@ function RatePanel({
   API,
 }) {
   const isLoading = !!rate
-  const roundedRate = rate && parseFloat(rate).toFixed(precision)
+  const roundedRate = rate && (parseFloat(rate).toFixed(precision) * fromValue)
   const [graphMode, setGraphMode] = useState(false)
 
   let message = isLoading
-    ? `1 ${from} = ${roundedRate} ${to}`
+    ? `${fromValue} ${from} = ${roundedRate} ${to}`
     : "Loading rate.."
 
   if (!!error) {

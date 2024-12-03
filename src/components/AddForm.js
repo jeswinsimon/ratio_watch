@@ -41,6 +41,7 @@ const FieldWrapper = styled.div.attrs({
 export default class AddForm extends React.Component {
   state = {
     from: "",
+    fromValue: 1,
     to: "",
   }
 
@@ -49,14 +50,19 @@ export default class AddForm extends React.Component {
     this.setState(s => ({ [field]: e.target.value.toUpperCase() }))
   }
 
-  submit = () => this.props.handleSubmit(this.state.from, this.state.to)
+  submit = () => this.props.handleSubmit(this.state.from, this.state.to, this.state.fromValue)
 
   render() {
-    const { from, to } = this.state
+    const { from, to, fromValue } = this.state
 
     return (
       <FieldWrapper>
         <FieldSet>
+        <Field
+            value={fromValue}
+            placeholder="1"
+            onChange={this.handleChange("fromValue")}
+          />
           <Field
             value={from}
             placeholder="From"

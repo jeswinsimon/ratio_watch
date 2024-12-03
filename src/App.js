@@ -17,8 +17,8 @@ export function App() {
 
   console.log("pairs", pairs)
 
-  const addPair = (from, to) => {
-    setPairs([...pairs, { from: from, to: to, api: "cc" }])
+  const addPair = (from, to, fromValue) => {
+    setPairs([...pairs, { from: from, to: to, fromValue: fromValue, api: "cc" }])
     setViewMode(!viewMode)
   }
 
